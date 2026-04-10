@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ferramentas PDF</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Ferramentas PDF</h1>
+      <p class="subtitle">Comprimir, dividir, juntar PDFs e converter imagens para PDF.</p>
+
+      <section class="card">
+        <h2>Comprimir PDF</h2>
+        <p class="hint">
+          Reduz o tamanho buscando preservar o maximo de qualidade possivel (limite: 500 MB por
+          arquivo).
+        </p>
+        <form id="compressForm">
+          <input type="file" id="compressFile" name="pdf" accept="application/pdf" required />
+          <button type="submit">Comprimir</button>
+        </form>
+        <p class="status" id="compressStatus"></p>
+      </section>
+
+      <section class="card">
+        <h2>Dividir PDF</h2>
+        <p class="hint">
+          Informe intervalos (ex: 1-3,4-6). Se deixar vazio, divide pagina por pagina (limite:
+          500 MB).
+        </p>
+        <form id="splitForm">
+          <input type="file" id="splitFile" name="pdf" accept="application/pdf" required />
+          <input
+            type="text"
+            id="splitRanges"
+            name="ranges"
+            placeholder="1-3,4-6 (opcional)"
+          />
+          <button type="submit">Dividir</button>
+        </form>
+        <p class="status" id="splitStatus"></p>
+      </section>
+
+      <section class="card">
+        <h2>Juntar PDFs</h2>
+        <p class="hint">
+          Selecione 2 ou mais arquivos PDF para criar um unico documento (limite por arquivo: 500
+          MB).
+        </p>
+        <form id="mergeForm">
+          <input
+            type="file"
+            id="mergeFiles"
+            name="pdfs"
+            accept="application/pdf"
+            multiple
+            required
+          />
+          <button type="submit">Juntar</button>
+        </form>
+        <p class="status" id="mergeStatus"></p>
+      </section>
+
+      <section class="card">
+        <h2>Imagem para PDF</h2>
+        <p class="hint">
+          Converte imagens (PNG, JPG, WEBP, BMP, TIFF, GIF e outras suportadas) em um unico PDF.
+        </p>
+        <form id="imagesToPdfForm">
+          <input type="file" id="imageFiles" name="images" accept="image/*" multiple required />
+          <button type="submit">Converter para PDF</button>
+        </form>
+        <p class="status" id="imagesToPdfStatus"></p>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
